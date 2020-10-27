@@ -1,0 +1,11 @@
+.title {
+  padding-bottom: 0.9rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  font-weight: 700;
+  font-size: 2.6rem;
+  color: #001529;
+
+  opacity: 0.75;
+}
