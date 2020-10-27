@@ -1,0 +1,94 @@
+.container {
+  width: 100%;
+  height: 15rem;
+  padding: 1.9rem;
+  border-radius: 0.8rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s, transform 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0px 4px 22px 3px rgba(0, 0, 0, 0.37);
+  transform: translateY(-1.35%) scale(1.015);
+
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  flex: 1;
+}
+
+.title {
+  padding-right: 2.5rem;
+  max-width: calc(100% - 2rem);
+  height: 8.1rem;
+  flex: 1;
+
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.7rem;
+
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+.statusCircle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+}
+
+.statusCircle.green {
+  background-color: #019D36;
+}
+
+.statusCircle.yellow {
+  background-color: #BD6600;
+}
+
+.statusCircle.red {
+  background-color: #E63946;
+}
+
+.footer {
+  display: flex;
+  align-items: flex-end;
+}
+
+.pendingReviews {
+  padding-right: 2.5rem;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+}
+
+.pendingReviewsIcon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.75rem;
+
+  fill: #001529;
+  stroke: #001529c0;
+  stroke-width: 0.04rem;
+
+  opacity: 0.75;
+}
+
+.pendingReviewsText {
+  font-size: 1.6rem;
+
+  color: #001529;
+  opacity: 0.75;
+}
+
+.arrowRight {
+  width: 2.2rem;
+  height: 2.2rem;
+}
