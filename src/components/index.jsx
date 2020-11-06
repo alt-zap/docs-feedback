@@ -1,11 +1,11 @@
-import Layout from './Layout';
-import Section from './Section';
-import GridList from './GridList';
 import PageCard from './PageCard';
+import DetailsItem from './DetailsItem';
+import ReviewCard from './ReviewCard';
+import ExpandedReview from './ExpandedReview';
 
 export {
-  Layout,
-  Section,
-  GridList,
   PageCard,
+  DetailsItem,
+  ReviewCard,
+  ExpandedReview,
 };

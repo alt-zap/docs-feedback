@@ -1,0 +1,35 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  overflow-y: auto;
+
+  background-color: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.container.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.clickableBackground {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -9999;
+
+  pointer-events: painted;
+}

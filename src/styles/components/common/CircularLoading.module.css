@@ -1,0 +1,16 @@
+.loadingIcon {
+  width: 3rem;
+  height: 3rem;
+
+  animation: loading-rotation infinite cubic-bezier(0.27, 0.55, 0.72, 0.62);
+  animation-duration: 1.9s;
+  opacity: 0.8;
+}
+
+@keyframes loading-rotation {
+  0% {
+    transform: rotate(0deg);
+  } 100% {
+    transform: rotate(1080deg);
+  }
+}

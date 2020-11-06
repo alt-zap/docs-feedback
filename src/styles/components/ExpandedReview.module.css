@@ -1,0 +1,148 @@
+.container {
+  width: 100%;
+  max-width: 71rem;
+  height: 100%;
+  max-height: 42rem;
+  margin: 0 1rem;
+  padding: 3.4rem;
+  border-radius: 0.8rem;
+
+  position: relative;
+
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: #ffffff;
+}
+
+.closeIcon {
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.35rem;
+  border-radius: 1.25rem;
+
+  position: absolute;
+  top: 1.35rem;
+  right: 1.35rem;
+
+  color: #001529;
+  opacity: 0.8;
+
+  transition: background-color 0.2s;
+}
+
+.closeIcon:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.header {
+  margin-bottom: 4.3rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.reviewTypeContainer {
+  font-weight: 500;
+  font-size: 1.8rem;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.reviewTypeContainer.positive {
+  color: #019D36;
+}
+
+.reviewTypeContainer.negative {
+  color: #E63946;
+}
+
+.reviewTypeIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+  margin-left: 1rem;
+  margin-bottom: 0.19rem;
+}
+
+.main {
+  padding: 0 2rem;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feedbackMessage {
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+
+  font-weight: 400;
+  font-size: 1.7rem;
+  line-height: 2.6rem;
+
+  background: #00152910;
+}
+
+.feedbackMessage.emptyMessage {
+  opacity: 0.7;
+}
+
+.submissionTimeContainer {
+  margin-top: 3rem;
+}
+
+.submissionTimeLabel {
+  color: #001529;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+
+  opacity: 0.7;
+}
+
+.submissionTime {
+  margin-top: 0.8rem;
+
+  display: flex;
+  align-items: center;
+
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.submissionTimeSeparator {
+  width: 2px;
+  height: 1.5rem;
+  margin: 0 0.75rem;
+
+  display: inline-block;
+
+  background-color: #000000;
+  opacity: 0.3;
+}
+
+.footer {
+  margin-top: 2.6rem;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.archivedReviewLabel {
+  color: #001529;
+  font-size: 1.7rem;
+  font-weight: 500;
+
+  opacity: 0.7;
+}
+
+@media (max-width: 550px) {
+  .main {
+    padding: 0;
+  }
+}
