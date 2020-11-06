@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Layout, Section, GridList, PageCard } from '../components';
+import { PageCard } from '../components';
+import { Layout, Section, GridList } from '../components/common';
 import { requestDocsPages } from '../services';
 
 import styles from '../styles/pages/Overview.module.css';
