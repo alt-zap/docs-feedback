@@ -8,8 +8,12 @@ import {
   createPageDetailsListener,
   createReviewsListener,
   archiveReview,
-} from '../../services';
-import { DetailsItem, ReviewCard, ExpandedReview } from '../../components';
+} from '@services';
+import {
+  DetailsItem,
+  ReviewCard,
+  ExpandedReview,
+} from '@components/pageDetails';
 import {
   GridList,
   Layout,
@@ -18,14 +22,14 @@ import {
   CircularLoading,
   Modal,
   Button,
-} from '../../components/common';
+} from '@components/common';
 import {
   getPageStatusColor,
   getPageStatusMessage,
   objectHasOwnProperty,
-} from '../../utils';
+} from '@utils';
 
-import styles from '../../styles/pages/PageDetails.module.css';
+import styles from '@styles/pages/PageDetails.module.css';
 
 function PageDetails() {
   const router = useRouter();

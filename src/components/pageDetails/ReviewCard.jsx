@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 import { AiOutlineLike, AiOutlineDislike } from 'react-icons/ai';
 
-import styles from '../styles/components/ReviewCard.module.css';
+import styles from '@styles/components/pageDetails/ReviewCard.module.css';
 
 function ReviewCard(props) {
   const {

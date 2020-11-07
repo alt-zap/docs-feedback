@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import clsx from 'clsx';
 
-import { toREM } from '../../utils';
+import { toREM } from '@utils';
 
-import styles from '../../styles/components/common/ProgressCircle.module.css';
+import styles from '@styles/components/common/ProgressCircle.module.css';
 
 function ProgressCircle(props) {
   const {

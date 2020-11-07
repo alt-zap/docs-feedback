@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../../styles/components/common/Section.module.css';
+import styles from '@styles/components/common/Section.module.css';
 
 function Section({ title, className, children, ...rest }) {
   return (

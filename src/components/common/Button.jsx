@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import styles from '../../styles/components/common/Button.module.css';
+import styles from '@styles/components/common/Button.module.css';
 
 function Button(props) {
   const {

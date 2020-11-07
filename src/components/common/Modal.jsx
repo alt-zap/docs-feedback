@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import clsx from 'clsx';
 
-import { getScrollbarWidth } from '../../utils';
+import { getScrollbarWidth } from '@utils';
 
-import styles from '../../styles/components/common/Modal.module.css';
+import styles from '@styles/components/common/Modal.module.css';
 
 function Modal(props) {
   const {

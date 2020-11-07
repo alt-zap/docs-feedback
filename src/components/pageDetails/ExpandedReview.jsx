@@ -3,9 +3,9 @@ import clsx from 'clsx';
 import { IoMdClose } from 'react-icons/io';
 import { AiOutlineLike, AiOutlineDislike } from 'react-icons/ai';
 
-import { Button } from './common';
+import { Button } from '@components/common';
 
-import styles from '../styles/components/ExpandedReview.module.css';
+import styles from '@styles/components/pageDetails/ExpandedReview.module.css';
 
 function ExpandedReview(props) {
   const {

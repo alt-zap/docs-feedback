@@ -5,7 +5,7 @@ import { BsCardText } from 'react-icons/bs';
 import { FaRegCheckCircle } from 'react-icons/fa';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 
-import styles from '../styles/components/PageCard.module.css';
+import styles from '@styles/components/overview/PageCard.module.css';
 
 function PageCard({ pageId, title, statusColor, pendingReviews }) {
   return (

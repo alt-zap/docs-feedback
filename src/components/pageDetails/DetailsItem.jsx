@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import styles from '../styles/components/DetailsItem.module.css';
+import styles from '@styles/components/pageDetails/DetailsItem.module.css';
 
 function DetailsItem({ title, className, fields, children, ...rest }) {
   return (

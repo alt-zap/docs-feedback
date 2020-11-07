@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { PageCard } from '../components';
-import { Layout, Section, GridList } from '../components/common';
-import { requestDocsPages } from '../services';
+import { Layout, Section, GridList } from '@components/common';
+import { PageCard } from '@components/overview';
+import { requestDocsPages } from '@services';
 
-import styles from '../styles/pages/Overview.module.css';
+import styles from '@styles/pages/Overview.module.css';
 
 function Overview({ docsPages }) {
   return (

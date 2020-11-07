@@ -1,8 +1,8 @@
-import clsx from 'clsx';
 import React from 'react';
+import clsx from 'clsx';
 import { BiLoaderAlt } from 'react-icons/bi';
 
-import styles from '../../styles/components/common/CircularLoading.module.css';
+import styles from '@styles/components/common/CircularLoading.module.css';
 
 function CircularLoading({ className, ...rest }) {
   return (
