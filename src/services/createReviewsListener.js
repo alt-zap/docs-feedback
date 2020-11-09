@@ -31,10 +31,7 @@ function createReviewsListener(pageId, callback, options) {
     .limit(limitOfReviews)
     .onSnapshot(handleSnapshot);
 
-  return {
-    limitOfReviews,
-    removeSnapshotListener,
-  };
+  return { removeSnapshotListener };
 }
 
 export default createReviewsListener;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo, useMemo } from 'react';
 import clsx from 'clsx';
 import { HiArrowNarrowRight } from 'react-icons/hi';
 import { AiOutlineLike, AiOutlineDislike } from 'react-icons/ai';
@@ -14,7 +14,7 @@ function ReviewCard(props) {
     ...rest
   } = props;
 
-  function formatReviewSubmissionDate() {
+  const formattedReviewSubmissionDate = useMemo(() => {
     const reviewSubmissionDate = timestamp.toDate();
 
     return reviewSubmissionDate.toLocaleDateString('pt-BR', {
@@ -22,7 +22,7 @@ function ReviewCard(props) {
       month: 'short',
       year: 'numeric',
     });
-  }
+  }, [timestamp]);
 
   return (
     <div className={clsx(styles.container, className)} {...rest}>
@@ -44,7 +44,7 @@ function ReviewCard(props) {
 
       <footer className={styles.footer}>
         <div className={styles.timeAgo}>
-          {formatReviewSubmissionDate()}
+          {formattedReviewSubmissionDate}
         </div>
 
         <HiArrowNarrowRight className={styles.arrowRight} />
@@ -53,4 +53,4 @@ function ReviewCard(props) {
   );
 }
 
-export default ReviewCard;
+export default memo(ReviewCard);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import clsx from 'clsx';
 import { IoMdClose } from 'react-icons/io';
 import { AiOutlineLike, AiOutlineDislike } from 'react-icons/ai';
@@ -18,11 +18,16 @@ function ExpandedReview(props) {
 
   const { reviewType, feedbackMessage, timestamp, pending } = review;
 
-  const submissionTime = timestamp.toDate().toLocaleTimeString('pt-BR', {
-    hour: '2-digit',
-    minute: '2-digit',
-  });
-  const submissionDate = timestamp.toDate().toLocaleDateString('pt-BR');
+  const submissionTime = useMemo(() => (
+    timestamp.toDate().toLocaleTimeString('pt-BR', {
+      hour: '2-digit',
+      minute: '2-digit',
+    })
+  ), [timestamp]);
+
+  const submissionDate = useMemo(() => (
+    timestamp.toDate().toLocaleDateString('pt-BR')
+  ), [timestamp]);
 
   return (
     <div className={clsx(styles.container, className)} {...rest}>

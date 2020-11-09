@@ -12,9 +12,9 @@ function createPageDetailsListener(pageId, callback) {
     const pageDetails = {
       id: pageSnapshot.id,
       title,
-      positiveReviews,
-      negativeReviews,
-      pendingReviews,
+      numberOfPositiveReviews: positiveReviews,
+      numberOfNegativeReviews: negativeReviews,
+      numberOfPendingReviews: pendingReviews,
     };
 
     callback(pageDetails);

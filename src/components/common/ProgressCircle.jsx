@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
 import clsx from 'clsx';
 
 import { toREM } from '@utils';
@@ -28,21 +28,24 @@ function ProgressCircle(props) {
     delay: animationDelay = 0,
   } = animation;
 
-  function getStrokeWidth(circleDiameter) {
+  const strokeWidth = useMemo(() => {
     const diameterToStrokeWidthRatio = 1 / 11;
 
-    return circleDiameter * diameterToStrokeWidthRatio;
-  }
+    return size * diameterToStrokeWidthRatio;
+  }, [size]);
 
-  const circleRadius = (size - getStrokeWidth(size)) / 2;
-  const initialDashoffset = (2 * Math.PI * circleRadius).toFixed(1);
+  const circleRadius = useMemo(() => (
+    (size - strokeWidth) / 2
+  ), [size, strokeWidth]);
 
-  function setupProgressAnimation() {
-    const foregroundCircle = document
-      .querySelector(`.${styles.foregroundCircle}`);
-    const progressValueElement = document
-      .querySelector(`.${styles.progressValue}`);
+  const initialDashoffset = useMemo(() => (
+    (2 * Math.PI * circleRadius).toFixed(1)
+  ), [circleRadius]);
 
+  const foregroundCircleRef = useRef(null);
+  const progressValueRef = useRef(null);
+
+  const setupProgressAnimation = useCallback(() => {
     const targetFillPercentage = targetValue / (maxValue - minValue);
     const targetDashoffset = Math.max(
       initialDashoffset * (1 - targetFillPercentage),
@@ -56,20 +59,22 @@ function ProgressCircle(props) {
 
       const currentPercentage = targetFillPercentage * expansionPercentage;
 
-      progressValueElement.innerText = !Number.isNaN(currentPercentage)
+      progressValueRef.current.innerText = !Number.isNaN(currentPercentage)
         ? (currentPercentage * 100).toFixed(1)
         : 0;
     }
 
     function runProgressAnimation() {
-      foregroundCircle.style.strokeDashoffset = `${targetDashoffset}px`;
+      foregroundCircleRef.current.style.strokeDashoffset = (
+        `${targetDashoffset}px`
+      );
 
       const intervalDuration = 25;
 
       const interval = setInterval(() => {
         const currentDashoffset = parseFloat(
           window
-            .getComputedStyle(foregroundCircle)
+            .getComputedStyle(foregroundCircleRef.current)
             .getPropertyValue('stroke-dashoffset'),
         ).toFixed(1);
 
@@ -82,9 +87,9 @@ function ProgressCircle(props) {
     }
 
     setTimeout(runProgressAnimation, animationDelay);
-  }
+  }, [maxValue, minValue, targetValue, initialDashoffset, animationDelay]);
 
-  useEffect(setupProgressAnimation, [values, animation]);
+  useEffect(setupProgressAnimation, [setupProgressAnimation]);
 
   return (
     <div className={clsx(styles.progressCircle, className)} {...rest}>
@@ -100,12 +105,16 @@ function ProgressCircle(props) {
             styles.circle,
             styles.backgroundCircle,
           )}
-          style={{ strokeDasharray: `${initialDashoffset}px` }}
+          style={{
+            strokeDasharray: `${initialDashoffset}px`,
+            strokeWidth,
+          }}
           cx="50%"
           cy="50%"
           r={circleRadius}
         />
         <circle
+          ref={foregroundCircleRef}
           className={clsx(
             styles.circle,
             styles.foregroundCircle,
@@ -114,6 +123,7 @@ function ProgressCircle(props) {
           style={{
             strokeDasharray: `${initialDashoffset}px`,
             strokeDashoffset: `${initialDashoffset}px`,
+            strokeWidth,
             transition: `stroke-dashoffset ${animationDuration}ms`,
           }}
           cx="50%"
@@ -123,7 +133,7 @@ function ProgressCircle(props) {
       </svg>
       <div className={styles.progressValueOuterContainer}>
         <div className={styles.progressValueInnerContainer}>
-          <h4 className={styles.progressValue}>
+          <h4 ref={progressValueRef} className={styles.progressValue}>
             {initialValue}
           </h4>
           <span className={styles.progressSymbol}>
