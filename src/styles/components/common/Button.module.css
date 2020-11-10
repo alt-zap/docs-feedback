@@ -1,0 +1,41 @@
+.container {
+  padding: 1rem 1.9rem;
+  border-radius: 0.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+
+  transition: background-color 0.2s;
+}
+
+.container:hover {
+  cursor: pointer;
+}
+
+.container.fill {
+  border: none;
+
+  color: #ffffff;
+  outline-color: #00488c;
+  background-color: #001529;
+}
+
+.container.fill:hover {
+  background-color: #00264a;
+}
+
+.container.outline {
+  border: 2px solid #001529;
+
+  color: #001529;
+  background-color: #f3f3f3;
+}
+
+.container.outline:hover {
+  background-color: #e1e1e1;
+}

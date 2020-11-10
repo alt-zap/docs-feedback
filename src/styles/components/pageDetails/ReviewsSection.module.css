@@ -1,0 +1,63 @@
+.pendingReviewsSection {
+  margin-top: 5rem;
+  position: relative;
+}
+
+.switchActiveReviewGroupContainer {
+  position: absolute;
+  top: -0.5rem;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.switchActiveReviewGroup.toPending,
+.switchActiveReviewGroup.toArchived {
+  width: 12rem;
+  height: 3.5rem;
+  padding: 1rem;
+
+  box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.2);
+
+  font-size: 1.4rem;
+}
+
+.switchActiveReviewGroup.toPending {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.switchActiveReviewGroup.toArchived {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.reviewsSectionLoadingContainer {
+  width: 100%;
+  margin-top: 4rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.reviewsSectionLoading {
+  width: 3.5rem;
+  height: 3.5rem;
+
+  opacity: 0.6;
+}
+
+@media (max-width: 750px) {
+  .switchActiveReviewGroupContainer {
+    margin-top: -0.75rem;
+    margin-bottom: 2rem;
+
+    position: initial;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 370px) {
+  .switchActiveReviewGroupContainer {
+    justify-content: center;
+  }
+}

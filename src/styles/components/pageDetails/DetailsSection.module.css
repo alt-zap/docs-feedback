@@ -1,0 +1,107 @@
+.detailsContainer {
+  display: grid;
+  grid-template-columns: 32rem 42rem;
+  grid-template-rows: 15.6rem;
+  gap: 2.3rem;
+}
+
+.detailsStatus {
+  position: relative;
+}
+
+.statusContainer {
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  padding-top: 3rem;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.statusTexts {
+  margin-right: 2rem;
+
+  text-align: right;
+}
+
+.statusLabel {
+  margin-bottom: 0.2rem;
+
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 2.8rem;
+}
+
+.statusLabel.green {
+  color: #006A24;
+}
+
+.statusLabel.yellow {
+  color: #af5e00;
+}
+
+.statusLabel.red {
+  color: #c71b2a;
+}
+
+.statusDescription {
+  max-width: 23.4rem;
+
+  color: #001529;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2rem;
+
+  opacity: 0.7;
+}
+
+@media (max-width: 860px) {
+  .detailsContainer {
+    grid-template-columns: 1fr;
+    grid-template-rows: 15.6rem 15.6rem;
+  }
+
+  .reviewCount {
+    width: 100%;
+    max-width: 32rem;
+  }
+
+  .detailsStatus {
+    width: 100%;
+    max-width: 42rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .reviewCount {
+    max-width: 42rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .detailsContainer {
+    grid-template-rows: 15.6rem 18rem;
+  }
+
+  .statusContainer {
+    padding-top: 5rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .statusLabel.yellow,
+  .statusLabel.red {
+    font-size: 1.7rem;
+    line-height: 2rem;
+  }
+
+  .statusDescription {
+    font-size: 1.25rem;
+  }
+}

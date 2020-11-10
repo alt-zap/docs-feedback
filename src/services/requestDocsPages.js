@@ -1,5 +1,5 @@
+import { getPageStatusColor } from '@utils';
 import db from './firebase';
-import { getPageStatusColor } from '../utils';
 
 async function requestDocsPages() {
   const feedbackSnapshot = await db.collection('feedback').get();

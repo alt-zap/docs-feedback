@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@components": ["components/index"],
+
+      "@services/*": ["services/*"],
+      "@services": ["services/index"],
+
+      "@styles/*": ["styles/*"],
+      "@styles": ["styles/index"],
+
+      "@utils/*": ["utils/*"],
+      "@utils": ["utils/index"],
+    },
+    "jsx": "preserve",
+  },
+  "exclude": ["node_modules"],
+}
