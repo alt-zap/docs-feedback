@@ -59,19 +59,28 @@ function ProgressCircle(props) {
 
       const currentPercentage = targetFillPercentage * expansionPercentage;
 
-      progressValueRef.current.innerText = !Number.isNaN(currentPercentage)
-        ? (currentPercentage * 100).toFixed(1)
-        : 0;
+      if (progressValueRef.current) {
+        progressValueRef.current.innerText = !Number.isNaN(currentPercentage)
+          ? (currentPercentage * 100).toFixed(1)
+          : 0;
+      }
     }
 
     function runProgressAnimation() {
-      foregroundCircleRef.current.style.strokeDashoffset = (
-        `${targetDashoffset}px`
-      );
+      if (foregroundCircleRef.current) {
+        foregroundCircleRef.current.style.strokeDashoffset = (
+          `${targetDashoffset}px`
+        );
+      }
 
       const intervalDuration = 25;
 
       const interval = setInterval(() => {
+        if (!foregroundCircleRef.current) {
+          clearInterval(interval);
+          return;
+        }
+
         const currentDashoffset = parseFloat(
           window
             .getComputedStyle(foregroundCircleRef.current)
